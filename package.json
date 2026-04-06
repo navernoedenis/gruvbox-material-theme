@@ -1,0 +1,139 @@
+{
+  "name": "gruvbox-material-theme",
+  "displayName": "Gruvbox Material Theme",
+  "description": "Gruvbox Material Theme for Visual Studio Code",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "email": "navernoedenis@gmail.com",
+    "name": "navernoedenis",
+    "url": "https://github.com/navernoedenis"
+  },
+  "scripts": {
+    "build:app": "bun compile && bun package",
+    "build:logo": "bun ./src/scripts/build-logo.ts",
+    "build:theme": "bun ./src/scripts/build-theme.ts && mv ./src/gruvbox-*.json ./dist",
+    "compile:clean": "rimraf dist && rimraf *.vsix",
+    "compile": "bun compile:clean && tsc && bun build:theme",
+    "package": "bun build:logo && bun vsce package"
+  },
+  "publisher": "navernoedenis",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "homepage": "https://github.com/navernoedenis/gruvbox-material-theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navernoedenis/gruvbox-material-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/navernoedenis/gruvbox-material-theme/issues"
+  },
+  "icon": "logo.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "customization",
+    "gruvbox",
+    "material",
+    "theme",
+    "themes"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "main": "dist/index-client.js",
+  "contributes": {
+    "themes": [
+      {
+        "id": "gruvbox-material-theme",
+        "label": "Gruvbox Material Theme",
+        "uiTheme": "vs-dark",
+        "path": "./dist/gruvbox-material-theme.json"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Gruvbox Material Theme",
+      "properties": {
+        "gruvbox-material-theme.palette": {
+          "description": "Choose the main color palette for your editor.",
+          "type": "string",
+          "enum": [
+            "classic",
+            "material"
+          ],
+          "enumDescriptions": [
+            "Classic Gruvbox colors for a traditional look",
+            "Material-inspired Gruvbox colors for a modern feel"
+          ],
+          "default": "material"
+        },
+        "gruvbox-material-theme.contrast": {
+          "description": "Set the background contrast for the theme.",
+          "type": "string",
+          "enum": [
+            "soft",
+            "medium",
+            "hard"
+          ],
+          "enumDescriptions": [
+            "Light background for easy-on-the-eyes coding",
+            "Balanced light/dark background for general use",
+            "Dark background for maximum contrast and focus"
+          ],
+          "default": "medium"
+        },
+        "gruvbox-material-theme.cursor": {
+          "description": "Pick the color of your text cursor for better visibility.",
+          "type": "string",
+          "enum": [
+            "aqua",
+            "blue",
+            "green",
+            "orange",
+            "purple",
+            "red",
+            "white",
+            "yellow"
+          ],
+          "default": "white"
+        },
+        "gruvbox-material-theme.selection": {
+          "description": "Customize the background color of selected text to highlight code efficiently.",
+          "type": "string",
+          "enum": [
+            "aqua",
+            "blue",
+            "green",
+            "grey",
+            "orange",
+            "purple",
+            "red",
+            "yellow"
+          ],
+          "default": "grey"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@types/vscode": "^1.110.0",
+    "@vscode/vsce": "^3.7.1",
+    "rimraf": "^6.1.3",
+    "sharp": "^0.34.5",
+    "typescript": "^6.0.2"
+  }
+}

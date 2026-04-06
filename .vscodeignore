@@ -1,0 +1,13 @@
+.github
+.gitignore
+.vscode
+
+*.vsix
+**/*.ts
+
+images
+node_modules
+
+bun.lock
+logo.svg
+tsconfig.json
