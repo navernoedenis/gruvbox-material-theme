@@ -2,7 +2,7 @@
   "name": "gruvbox-material-theme",
   "displayName": "Gruvbox Material Theme",
   "description": "Gruvbox Material Theme for Visual Studio Code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": {
     "email": "navernoedenis@gmail.com",
@@ -30,6 +30,10 @@
     "url": "https://github.com/navernoedenis/gruvbox-material-theme/issues"
   },
   "icon": "logo.png",
+  "galleryBanner": {
+    "color": "#292828",
+    "theme": "dark"
+  },
   "activationEvents": [
     "onStartupFinished"
   ],

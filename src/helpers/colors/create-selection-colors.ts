@@ -1,25 +1,26 @@
 import {
   type ContrastColors,
   type PaletteColors,
+  type SelectionColor,
   type SelectionColors,
 } from '../../types';
 
 export function createSelectionColors({
-  contrast,
-  palette,
+  contrastColors,
+  paletteColors,
   selection,
 }: {
-  contrast: ContrastColors;
-  palette: PaletteColors;
-  selection: string;
+  contrastColors: ContrastColors;
+  paletteColors: PaletteColors;
+  selection: SelectionColor;
 }): SelectionColors {
-  const isGreyColor = selection === 'grey';
-  const dimColor = `${selection}Dim` as keyof typeof palette;
-  const paletteColor = palette[dimColor] ?? contrast.bg6;
+  const isGrey = selection === 'grey';
+  const dimColor = `${selection}Dim` as keyof typeof paletteColors;
+  const paletteColor = paletteColors[dimColor] ?? contrastColors.bg6;
 
   return {
-    bg1: `${paletteColor}${isGreyColor ? 'd0' : '60'}`,
-    bg2: `${paletteColor}${isGreyColor ? 'b0' : '40'}`,
-    bg3: `${paletteColor}${isGreyColor ? '58' : '20'}`,
+    bg1: `${paletteColor}${isGrey ? 'd0' : '60'}`,
+    bg2: `${paletteColor}${isGrey ? 'b0' : '40'}`,
+    bg3: `${paletteColor}${isGrey ? '58' : '20'}`,
   };
 }

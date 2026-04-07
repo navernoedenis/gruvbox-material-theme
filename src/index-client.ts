@@ -30,7 +30,7 @@ export function activate() {
       const theme = createTheme(themeOptions);
 
       writeThemeToFile(theme, () => {
-        const message = 'Gruvbox Material Theme has been updated';
+        const message = 'Theme has been updated';
         const reloadAction = 'Reload theme';
 
         window

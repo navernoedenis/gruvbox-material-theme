@@ -14,9 +14,9 @@
 </h3>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.0.0-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.0.1-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/0%2F0(0)-%23000?style=for-the-badge&label=rating&color=%23e3ae5a" alt="rating"></a>&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/0-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/10+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a>&nbsp;
 </p>
 
 <h2 align="center">Palette: Material</h2>
@@ -52,5 +52,16 @@
     <a href="https://github.com/morhetz/gruvbox">morhetz/gruvbox</a>
     <br>
     The original Gruvbox palette that laid the foundation for the colors and aesthetics.
+  </p>
+</div>
+
+<h2 align="center">Additional information</h2>
+
+<div align="center">
+ <p>
+    - There are currently no plans to add a light (white) theme.
+  </p>
+ <p>
+    - The font used in the screenshots is "IBM Plex Mono".
   </p>
 </div>

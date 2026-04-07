@@ -2,6 +2,19 @@ export type ThemePalette = 'classic' | 'material';
 
 export type ThemeContrast = 'soft' | 'medium' | 'hard';
 
+type BaseColor =
+  | 'aqua'
+  | 'blue'
+  | 'green'
+  | 'orange'
+  | 'purple'
+  | 'red'
+  | 'yellow';
+
+export type PaletteColor = BaseColor | `${BaseColor}Dim`;
+export type CursorColor = BaseColor | 'white';
+export type SelectionColor = BaseColor | 'grey';
+
 export interface TokenColor {
   name: string;
   scope: string;
@@ -18,30 +31,15 @@ export interface Theme {
 
 export interface ThemeOptions {
   contrast: ThemeContrast;
-  cursor: string;
+  cursor: CursorColor;
   palette: ThemePalette;
-  selection: string;
+  selection: SelectionColor;
 }
 
-export interface PaletteColors {
+export interface PaletteColors extends Record<PaletteColor, string> {
   fg: string;
   fg0: string;
   fg1: string;
-
-  aqua: string;
-  aquaDim: string;
-  blue: string;
-  blueDim: string;
-  green: string;
-  greenDim: string;
-  orange: string;
-  orangeDim: string;
-  purple: string;
-  purpleDim: string;
-  red: string;
-  redDim: string;
-  yellow: string;
-  yellowDim: string;
 }
 
 export interface ContrastColors {
