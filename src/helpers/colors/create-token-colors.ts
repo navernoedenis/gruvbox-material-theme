@@ -839,7 +839,7 @@ export function createTokenColors({
     },
     {
       name: 'JSX white',
-      scope: 'JSXNested',
+      scope: ['meta.jsx.children', 'text.html.jsx'].join(', '),
       settings: {
         foreground: paletteColors.fg,
       },
@@ -1701,6 +1701,7 @@ export function createTokenColors({
       scope: [
         'keyword.control.import.from.python',
         'keyword.control.import.python',
+        'variable.parameter.function.language.special.self',
       ].join(', '),
       settings: {
         foreground: paletteColors.purple,
