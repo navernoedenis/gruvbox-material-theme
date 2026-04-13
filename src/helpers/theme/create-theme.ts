@@ -55,11 +55,15 @@ export function createTheme(themeOptions: ThemeOptions): Theme {
     selectionColors,
   });
 
-  const tokenColors = createTokenColors({ contrastColors, paletteColors });
+  const tokenColors = createTokenColors({
+    contrastColors,
+    paletteColors,
+  });
+
   const semanticTokenColors = createSemanticColors(paletteColors);
 
   return {
-    palette: themeOptions.palette,
+    palette,
     colors,
     tokenColors,
     semanticHighlighting: true,

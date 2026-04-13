@@ -11,25 +11,15 @@ import { extensionName } from './constants/main';
 
 export function activate() {
   const isBackupExists = checkIsBackupExists();
-  const isDefaultThemeOptions = checkIsDefaultThemeOptions(
-    getThemeOptions(extensionName),
-  );
+  const isDefaultThemeOptions = checkIsDefaultThemeOptions(getThemeOptions());
 
   if (!isBackupExists && !isDefaultThemeOptions) {
-    const themeOptions = getThemeOptions(extensionName);
-    const theme = createTheme(themeOptions);
-    writeThemeToFile(theme, () => {
-      createBackup();
-      reloadWindow();
-    });
+    updateTheme(() => (createBackup(), reloadWindow()));
   }
 
   workspace.onDidChangeConfiguration((event) => {
     if (event.affectsConfiguration(extensionName)) {
-      const themeOptions = getThemeOptions(extensionName);
-      const theme = createTheme(themeOptions);
-
-      writeThemeToFile(theme, () => {
+      updateTheme(() => {
         const message = 'Theme has been updated';
         const reloadAction = 'Reload theme';
 
@@ -41,7 +31,11 @@ export function activate() {
   });
 }
 
-export function deactivate() {}
+function updateTheme(func?: () => void) {
+  const options = getThemeOptions();
+  const theme = createTheme(options);
+  writeThemeToFile(theme, func);
+}
 
 function reloadWindow() {
   commands.executeCommand('workbench.action.reloadWindow');

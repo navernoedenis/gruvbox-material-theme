@@ -18,7 +18,6 @@ export function createTokenColors({
         'keyword.operator.delete',
         'keyword.operator.expression',
         'keyword.operator.new',
-        'keyword.operator.new',
         'keyword',
         'storage.type.class',
         'storage.type.enum',
@@ -83,7 +82,6 @@ export function createTokenColors({
       name: 'String Escape',
       scope: [
         'constant.character.escape',
-        'constant.other.placeholder',
         'constant.other.placeholder',
         'punctuation.definition.template-expression',
         'punctuation.quasi.element',

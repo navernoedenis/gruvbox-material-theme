@@ -1,7 +1,3 @@
-export type ThemePalette = 'classic' | 'material';
-
-export type ThemeContrast = 'soft' | 'medium' | 'hard';
-
 type BaseColor =
   | 'aqua'
   | 'blue'
@@ -10,6 +6,9 @@ type BaseColor =
   | 'purple'
   | 'red'
   | 'yellow';
+
+export type ThemePalette = 'classic' | 'material';
+export type ThemeContrast = 'soft' | 'medium' | 'hard';
 
 export type PaletteColor = BaseColor | `${BaseColor}Dim`;
 export type CursorColor = BaseColor | 'white';
