@@ -803,6 +803,17 @@ export function createTokenColors({
       },
     },
     {
+      name: 'JavaScript aqua',
+      scope: [
+        'keyword.control.export.js',
+        'keyword.control.from.js',
+        'keyword.control.import.js',
+      ].join(', '),
+      settings: {
+        foreground: paletteColors.aqua,
+      },
+    },
+    {
       name: 'JavaScript white',
       scope: 'string.unquoted.js',
       settings: {
@@ -853,6 +864,24 @@ export function createTokenColors({
       ].join(', '),
       settings: {
         foreground: paletteColors.green,
+      },
+    },
+    {
+      name: 'JSX purple',
+      scope: [
+        'keyword.control.export.js.jsx',
+        'keyword.control.from.js.jsx',
+        'keyword.control.import.js.jsx',
+      ].join(', '),
+      settings: {
+        foreground: paletteColors.purple,
+      },
+    },
+    {
+      name: 'JSX orange',
+      scope: 'support.class.component.js.jsx',
+      settings: {
+        foreground: paletteColors.orange,
       },
     },
     {
@@ -919,6 +948,7 @@ export function createTokenColors({
       name: 'TypeScript purple',
       scope: [
         'keyword.control.export.ts',
+        'keyword.control.from.ts',
         'keyword.control.import.ts',
         'storage.type.namespace.ts',
       ].join(', '),
@@ -982,6 +1012,7 @@ export function createTokenColors({
       name: 'TSX purple',
       scope: [
         'keyword.control.export.tsx',
+        'keyword.control.from.tsx',
         'keyword.control.import.tsx',
         'storage.type.namespace.tsx',
       ].join(', '),

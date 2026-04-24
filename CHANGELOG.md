@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- Fixed inconsistent colors for `import`, `export` and `from` in .js, .ts, .jsx and .tsx files
+- Fixed component colors in .tsx and .jsx files
+
 ## 1.0.3
 
 - Removed duplicates in the token creation function
