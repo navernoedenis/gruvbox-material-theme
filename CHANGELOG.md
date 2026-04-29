@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- Added border separators
+- Updated the logo
+
 ## 1.0.4
 
 - Fixed inconsistent colors for `import`, `export` and `from` in .js, .ts, .jsx and .tsx files
@@ -25,5 +30,5 @@
 ## 1.0.0
 
 - Initial release
-- Added two palettes: material and classic
-- Customizable contrast, cursor and selection colors
+- Added two palettes `material` and `classic`
+- Added customizable `contrast`, `cursor` and `selection colors`

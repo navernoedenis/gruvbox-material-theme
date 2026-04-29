@@ -14,9 +14,9 @@
 </h3>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.0.4-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.1.0-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/0%2F0(0)-%23000?style=for-the-badge&label=rating&color=%23e3ae5a" alt="rating"></a>&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/35+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/40+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a>&nbsp;
 </p>
 
 <h2 align="center">Palette: Material</h2>
@@ -25,17 +25,17 @@
 <h2 align="center">Palette: Classic</h2>
 <img src="./images/palette-classic.png" alt="Gruvbox Classic Theme">
 
-<h2 align="center" style="margin-bottom: 0;">Contrasts</h2>
+<h2 align="center" style="margin-bottom: 0;">Contrast</h2>
 
 <h3 align="center">
-  <span>Hard</span>
+  <span>Soft</span>
   <span>|</span>
   <span>Medium</span>
   <span>|<span>
-  <span>Soft</span>
+  <span>Hard</span>
 </h3>
 
-<img src="./images/contrasts.png" alt="Gruvbox Material Theme - Contrasts">
+<img src="./images/contrasts.png" alt="Gruvbox Material Theme - Contrast">
 
 <h2 align="center">Special Thanks</h2>
 

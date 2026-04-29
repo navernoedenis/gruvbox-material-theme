@@ -10,9 +10,10 @@ type BaseColor =
 export type ThemePalette = 'classic' | 'material';
 export type ThemeContrast = 'soft' | 'medium' | 'hard';
 
-export type PaletteColor = BaseColor | `${BaseColor}Dim`;
 export type CursorColor = BaseColor | 'white';
+export type PaletteColor = BaseColor | `${BaseColor}Dim`;
 export type SelectionColor = BaseColor | 'grey';
+export type Separators = boolean;
 
 export interface TokenColor {
   name: string;
@@ -31,6 +32,7 @@ export interface Theme {
 export interface ThemeOptions {
   contrast: ThemeContrast;
   cursor: CursorColor;
+  enableSparators: boolean;
   palette: ThemePalette;
   selection: SelectionColor;
 }
@@ -56,7 +58,6 @@ export interface ContrastColors {
   grey0: string;
   grey1: string;
   grey2: string;
-  shadow: string;
 }
 
 export interface SelectionColors {

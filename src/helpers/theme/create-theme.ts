@@ -1,18 +1,16 @@
-import {
-  classicPallete,
-  materialPalette,
-} from '../../constants/theme/palettes';
+import { classicPallete, materialPalette } from '../../constants/theme/palette';
 
 import {
   hardContrast,
   mediumContrast,
   softContrast,
-} from '../../constants/theme/contrasts';
+} from '../../constants/theme/contrast';
 
 import {
   createColors,
   createSelectionColors,
   createSemanticColors,
+  createSeparatorsColor,
   createTokenColors,
 } from '../colors';
 
@@ -36,9 +34,13 @@ const contrastColorsRecord: Record<ThemeContrast, ContrastColors> = {
   soft: softContrast,
 };
 
-export function createTheme(themeOptions: ThemeOptions): Theme {
-  const { palette, contrast, selection, cursor } = themeOptions;
-
+export function createTheme({
+  contrast,
+  cursor,
+  enableSparators,
+  palette,
+  selection,
+}: ThemeOptions): Theme {
   const paletteColors = paletteColorsRecord[palette];
   const contrastColors = contrastColorsRecord[contrast];
 
@@ -55,18 +57,22 @@ export function createTheme(themeOptions: ThemeOptions): Theme {
     selectionColors,
   });
 
-  const tokenColors = createTokenColors({
+  const separatorsColor = createSeparatorsColor({
+    isEnabled: enableSparators,
     contrastColors,
-    paletteColors,
   });
-
-  const semanticTokenColors = createSemanticColors(paletteColors);
 
   return {
     palette,
-    colors,
-    tokenColors,
+    colors: {
+      ...colors,
+      ...separatorsColor,
+    },
+    tokenColors: createTokenColors({
+      contrastColors,
+      paletteColors,
+    }),
     semanticHighlighting: true,
-    semanticTokenColors,
+    semanticTokenColors: createSemanticColors(paletteColors),
   };
 }

@@ -4,7 +4,6 @@ const commonContrastColors = {
   grey0: '#7c6f64',
   grey1: '#928374',
   grey2: '#a89984',
-  shadow: '#00000070',
 };
 
 export const softContrast: ContrastColors = {
