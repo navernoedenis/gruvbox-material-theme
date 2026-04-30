@@ -4,28 +4,30 @@
   <img src="./logo.png" alt="logo" width="200">
   <br>
   <br>
-    Gruvbox Material Theme
+    Gruvbox Theme (Material)
   <br>
 </h1>
 
 <h3 align="center">
-  Recommended icon set: 
-  <a href="https://github.com/navernoedenis/gruvbox-material-icons">Gruvbox Material Icons</a>
+  Try it with 
+  <a href="https://github.com/navernoedenis/gruvbox-material-icons">Gruvbox Icons (Material)</a>
 </h3>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.1.1-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.1.2-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/0%2F0(0)-%23000?style=for-the-badge&label=rating&color=%23e3ae5a" alt="rating"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/40+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a>&nbsp;
 </p>
 
-<h2 align="center">Palette: Material</h2>
+<hr>
+
+<h3 align="center">Palette: Material</h3>
 <img src="./images/palette-material.png" alt="Gruvbox Material Theme">
 
-<h2 align="center">Palette: Classic</h2>
+<h3 align="center">Palette: Classic</h3>
 <img src="./images/palette-classic.png" alt="Gruvbox Classic Theme">
 
-<h2 align="center" style="margin-bottom: 0;">Contrast</h2>
+<h3 align="center" style="margin-bottom: 0;">Contrast</h3>
 
 <h3 align="center">
   <span>Soft</span>
@@ -37,7 +39,7 @@
 
 <img src="./images/contrasts.png" alt="Gruvbox Material Theme - Contrast">
 
-<h2 align="center">Special Thanks</h2>
+<h3 align="center">Special Thanks</h3>
 
 <div align="center">
   <p>
@@ -55,7 +57,7 @@
   </p>
 </div>
 
-<h2 align="center">Additional information</h2>
+<h3 align="center">Additional information</h3>
 
 <div align="center">
  <p>

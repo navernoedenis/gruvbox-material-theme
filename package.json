@@ -1,8 +1,8 @@
 {
   "name": "gruvbox-material-theme",
-  "displayName": "Gruvbox Material Theme",
-  "description": "Gruvbox Material Theme for Visual Studio Code",
-  "version": "1.1.1",
+  "displayName": "Gruvbox Theme (Material)",
+  "description": "Gruvbox-style theme for VS Code",
+  "version": "1.1.2",
   "license": "MIT",
   "author": {
     "email": "navernoedenis@gmail.com",
@@ -62,14 +62,14 @@
     "themes": [
       {
         "id": "gruvbox-material-theme",
-        "label": "Gruvbox Material Theme",
+        "label": "Gruvbox Theme (Material)",
         "uiTheme": "vs-dark",
         "path": "./dist/gruvbox-material-theme.json"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Gruvbox Material Theme",
+      "title": "Gruvbox Theme (Material)",
       "properties": {
         "gruvbox-material-theme.contrast": {
           "description": "Set the background contrast for the theme.",

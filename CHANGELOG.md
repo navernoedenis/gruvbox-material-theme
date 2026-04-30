@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Updated extension description to align with icon theme style
+
 ## 1.1.1
 
 - Fixed inconsistent default value for separators
