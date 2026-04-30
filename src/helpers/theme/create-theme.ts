@@ -37,9 +37,9 @@ const contrastColorsRecord: Record<ThemeContrast, ContrastColors> = {
 export function createTheme({
   contrast,
   cursor,
-  enableSparators,
   palette,
   selection,
+  separators,
 }: ThemeOptions): Theme {
   const paletteColors = paletteColorsRecord[palette];
   const contrastColors = contrastColorsRecord[contrast];
@@ -58,7 +58,7 @@ export function createTheme({
   });
 
   const separatorsColor = createSeparatorsColor({
-    isEnabled: enableSparators,
+    isEnabled: separators,
     contrastColors,
   });
 

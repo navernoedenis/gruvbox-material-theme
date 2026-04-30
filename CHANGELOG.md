@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Fixed inconsistent default value for separators
+
 ## 1.1.0
 
 - Added border separators

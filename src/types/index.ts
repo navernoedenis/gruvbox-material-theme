@@ -32,9 +32,9 @@ export interface Theme {
 export interface ThemeOptions {
   contrast: ThemeContrast;
   cursor: CursorColor;
-  enableSparators: boolean;
   palette: ThemePalette;
   selection: SelectionColor;
+  separators: boolean;
 }
 
 export interface PaletteColors extends Record<PaletteColor, string> {

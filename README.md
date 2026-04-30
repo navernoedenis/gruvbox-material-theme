@@ -14,7 +14,7 @@
 </h3>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.1.0-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.1.1-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/0%2F0(0)-%23000?style=for-the-badge&label=rating&color=%23e3ae5a" alt="rating"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/40+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a>&nbsp;
 </p>
