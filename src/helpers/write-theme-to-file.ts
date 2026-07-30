@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { extensionName } from '../constants/main';
+import { extensionName } from '../constants';
 import { type Theme } from '../types';
 
 export function writeThemeToFile(theme: Theme, func?: () => void) {

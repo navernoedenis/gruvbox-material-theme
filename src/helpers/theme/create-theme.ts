@@ -1,11 +1,5 @@
-import { classicPallete, materialPalette } from '../../constants/theme/palette';
-
-import {
-  hardContrast,
-  mediumContrast,
-  softContrast,
-} from '../../constants/theme/contrast';
-
+import { contrastsRecord, palettesRecord } from '../../constants';
+import { tokenColorsAdapter } from '../adapters';
 import {
   createColors,
   createSelectionColors,
@@ -14,25 +8,7 @@ import {
   createTokenColors,
 } from '../colors';
 
-import {
-  type ContrastColors,
-  type PaletteColors,
-  type Theme,
-  type ThemeContrast,
-  type ThemeOptions,
-  type ThemePalette,
-} from '../../types';
-
-const paletteColorsRecord: Record<ThemePalette, PaletteColors> = {
-  classic: classicPallete,
-  material: materialPalette,
-};
-
-const contrastColorsRecord: Record<ThemeContrast, ContrastColors> = {
-  hard: hardContrast,
-  medium: mediumContrast,
-  soft: softContrast,
-};
+import { type Theme, type ThemeOptions } from '../../types';
 
 export function createTheme({
   contrast,
@@ -41,8 +17,8 @@ export function createTheme({
   selection,
   separators,
 }: ThemeOptions): Theme {
-  const paletteColors = paletteColorsRecord[palette];
-  const contrastColors = contrastColorsRecord[contrast];
+  const contrastColors = contrastsRecord[contrast];
+  const paletteColors = palettesRecord[palette];
 
   const selectionColors = createSelectionColors({
     contrastColors,
@@ -57,21 +33,20 @@ export function createTheme({
     selectionColors,
   });
 
-  const separatorsColor = createSeparatorsColor({
-    isEnabled: separators,
+  const separatorColors = createSeparatorsColor({
     contrastColors,
+    separators,
+  });
+
+  const tokenColorsRaw = createTokenColors({
+    contrastColors,
+    paletteColors,
   });
 
   return {
     palette,
-    colors: {
-      ...colors,
-      ...separatorsColor,
-    },
-    tokenColors: createTokenColors({
-      contrastColors,
-      paletteColors,
-    }),
+    colors: { ...colors, ...separatorColors },
+    tokenColors: tokenColorsAdapter(tokenColorsRaw),
     semanticHighlighting: true,
     semanticTokenColors: createSemanticColors(paletteColors),
   };

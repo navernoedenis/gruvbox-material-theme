@@ -1,4 +1,4 @@
-import { materialPalette } from '../../constants/theme/palette';
+import { palettesRecord } from '../../constants';
 import {
   type ContrastColors,
   type CursorColor,
@@ -77,7 +77,7 @@ export function createColors({
     'debugTokenExpression.string': paletteColors.yellow,
     'debugTokenExpression.value': paletteColors.green,
     'debugToolBar.background': contrastColors.bg,
-    descriptionForeground: contrastColors.grey1,
+    'descriptionForeground': contrastColors.grey1,
     'diffEditor.diagonalFill': contrastColors.bg6,
     'diffEditor.insertedTextBackground': `${paletteColors.aquaDim}40`,
     'diffEditor.removedTextBackground': `${paletteColors.redDim}40`,
@@ -177,7 +177,7 @@ export function createColors({
     'editorWidget.background': contrastColors.bg,
     'editorWidget.border': contrastColors.bg9,
     'editorWidget.foreground': paletteColors.fg,
-    errorForeground: paletteColors.red,
+    'errorForeground': paletteColors.red,
     'extensionBadge.remoteBackground': contrastColors.grey2,
     'extensionBadge.remoteForeground': contrastColors.bg,
     'extensionButton.prominentBackground': contrastColors.grey2,
@@ -186,10 +186,10 @@ export function createColors({
     'extensionIcon.preReleaseForeground': paletteColors.orange,
     'extensionIcon.starForeground': paletteColors.aqua,
     'extensionIcon.verifiedForeground': paletteColors.green,
-    foreground: contrastColors.grey2,
-    'gitDecoration.addedResourceForeground': `${materialPalette.green}a0`,
-    'gitDecoration.conflictingResourceForeground': `${materialPalette.purple}a0`,
-    'gitDecoration.deletedResourceForeground': `${materialPalette.red}a0`,
+    'foreground': contrastColors.grey2,
+    'gitDecoration.addedResourceForeground': `${palettesRecord.material.green}a0`,
+    'gitDecoration.conflictingResourceForeground': `${palettesRecord.material.purple}a0`,
+    'gitDecoration.deletedResourceForeground': `${palettesRecord.material.red}a0`,
     'gitDecoration.ignoredResourceForeground': contrastColors.bg7,
     'gitDecoration.modifiedResourceForeground': `${paletteColors.blue}a0`,
     'gitDecoration.stageDeletedResourceForeground': `${paletteColors.aqua}a0`,

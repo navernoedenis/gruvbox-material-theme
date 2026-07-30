@@ -1,3 +1,7 @@
+export type ThemeContrast = 'soft' | 'medium' | 'hard' | 'slate';
+
+export type ThemePalette = 'classic' | 'material' | 'pastel';
+
 type BaseColor =
   | 'aqua'
   | 'blue'
@@ -7,9 +11,6 @@ type BaseColor =
   | 'red'
   | 'yellow';
 
-export type ThemePalette = 'classic' | 'material';
-export type ThemeContrast = 'soft' | 'medium' | 'hard';
-
 export type CursorColor = BaseColor | 'white';
 export type PaletteColor = BaseColor | `${BaseColor}Dim`;
 export type SelectionColor = BaseColor | 'grey';
@@ -18,7 +19,16 @@ export type Separators = boolean;
 export interface TokenColor {
   name: string;
   scope: string;
-  settings: Record<string, string>;
+  settings: TokenColorSettings;
+}
+
+export type TokenColorSettings = {
+  foreground?: string;
+  fontStyle?: string;
+};
+
+export interface TokenColorRaw extends Omit<TokenColor, 'scope'> {
+  scope: string | string[];
 }
 
 export interface Theme {

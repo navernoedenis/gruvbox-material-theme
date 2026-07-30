@@ -2,7 +2,7 @@
   "name": "gruvbox-material-theme",
   "displayName": "Gruvbox Theme (Material)",
   "description": "Gruvbox-style theme for VS Code",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "license": "MIT",
   "author": {
     "email": "navernoedenis@gmail.com",
@@ -19,7 +19,7 @@
   },
   "publisher": "navernoedenis",
   "engines": {
-    "vscode": "^1.110.0"
+    "vscode": "^1.125.0"
   },
   "homepage": "https://github.com/navernoedenis/gruvbox-material-theme",
   "repository": {
@@ -77,12 +77,14 @@
           "enum": [
             "soft",
             "medium",
-            "hard"
+            "hard",
+            "slate"
           ],
           "enumDescriptions": [
             "Light background for easy-on-the-eyes coding",
             "Balanced light/dark background for general use",
-            "Dark background for maximum contrast and focus"
+            "Dark background for maximum contrast and focus",
+            "Keeps the gruvbox feel with a cooler background palette"
           ],
           "default": "medium"
         },
@@ -106,11 +108,13 @@
           "type": "string",
           "enum": [
             "classic",
-            "material"
+            "material",
+            "pastel"
           ],
           "enumDescriptions": [
-            "Classic Gruvbox colors for a traditional look",
-            "Material-inspired Gruvbox colors for a modern feel"
+            "Classic gruvbox colors for a traditional look",
+            "Material-inspired gruvbox colors for a modern feel",
+            "A brighter color palette with muted pastel accents"
           ],
           "default": "material"
         },
@@ -138,11 +142,11 @@
     }
   },
   "devDependencies": {
-    "@types/node": "^25.5.2",
-    "@types/vscode": "^1.110.0",
-    "@vscode/vsce": "^3.7.1",
+    "@types/node": "^26.1.2",
+    "@types/vscode": "^1.125.0",
+    "@vscode/vsce": "^3.9.2",
     "rimraf": "^6.1.3",
     "sharp": "^0.34.5",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   }
 }

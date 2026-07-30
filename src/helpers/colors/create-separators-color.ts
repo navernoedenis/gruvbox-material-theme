@@ -1,25 +1,25 @@
 import { type ContrastColors } from '../../types';
 
 export function createSeparatorsColor({
-  isEnabled,
   contrastColors,
+  separators,
 }: {
-  isEnabled: boolean;
   contrastColors: ContrastColors;
+  separators: boolean;
 }) {
-  const separatorsColor = isEnabled ? contrastColors.bg3 : contrastColors.bg;
+  const color = separators ? contrastColors.bg3 : contrastColors.bg;
 
   return {
-    'activityBar.border': separatorsColor,
-    'contrastBorder': separatorsColor,
-    'editorGroup.border': separatorsColor, 
+    'activityBar.border': color,
+    'contrastBorder': color,
+    'editorGroup.border': color,
     'editorGroupHeader.border': contrastColors.bg,
-    'focusBorder': separatorsColor,
-    'panel.border': separatorsColor,
-    'sideBar.border': separatorsColor,
-    'statusBar.border': separatorsColor,
+    'focusBorder': color,
+    'panel.border': color,
+    'sideBar.border': color,
+    'statusBar.border': color,
     'tab.activeBorder': contrastColors.bg9,
-    'tab.border': separatorsColor,
-    'titleBar.border': separatorsColor,
+    'tab.border': color,
+    'titleBar.border': color,
   };
 }

@@ -1,9 +1,10 @@
-import { createTheme } from '../helpers/theme/create-theme';
+import { type ThemeOptions } from '../types';
+import { createTheme } from '../helpers/theme';
 import { writeThemeToFile } from '../helpers/write-theme-to-file';
-import { defaultThemeOptions } from '../constants/main';
+import { defaultThemeOptions } from '../constants';
 
-function buildTheme() {
-  writeThemeToFile(createTheme(defaultThemeOptions));
+function buildTheme(options: ThemeOptions) {
+  writeThemeToFile(createTheme(options));
 }
 
-buildTheme();
+buildTheme(defaultThemeOptions);

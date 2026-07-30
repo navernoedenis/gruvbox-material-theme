@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+
+- Added `slate` contrast and `pastel` palette
+- Improved codebase
+
 ## 1.1.2
 
 - Updated extension description to align with icon theme style
@@ -21,7 +26,6 @@
 ## 1.0.3
 
 - Removed duplicates in the token creation function
-- Improved codebase
 - Updated theme screenshots
 
 ## 1.0.2

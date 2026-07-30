@@ -1,25 +1,31 @@
 import { commands, window, workspace } from 'vscode';
 import { createBackup, checkIsBackupExists } from './helpers/create-backup';
 import { writeThemeToFile } from './helpers/write-theme-to-file';
-import { createTheme } from './helpers/theme/create-theme';
 import {
-  getThemeOptions,
   checkIsDefaultThemeOptions,
-} from './helpers/theme/get-theme-options';
+  createTheme,
+  getThemeOptions,
+} from './helpers/theme';
 
-import { extensionName } from './constants/main';
+import { extensionName } from './constants';
+import { ThemeOptions } from './types';
 
 export function activate() {
+  const config = workspace.getConfiguration(extensionName);
+  const options = getThemeOptions(config);
   const isBackupExists = checkIsBackupExists();
-  const isDefaultThemeOptions = checkIsDefaultThemeOptions(getThemeOptions());
+  const isDefaultThemeOptions = checkIsDefaultThemeOptions(options);
 
   if (!isBackupExists && !isDefaultThemeOptions) {
-    updateTheme(() => (createBackup(), reloadWindow()));
+    updateTheme(options, () => (createBackup(), reloadWindow()));
   }
 
   workspace.onDidChangeConfiguration((event) => {
     if (event.affectsConfiguration(extensionName)) {
-      updateTheme(() => {
+      const updatedConfig = workspace.getConfiguration(extensionName);
+      const updatedOptions = getThemeOptions(updatedConfig);
+
+      updateTheme(updatedOptions, () => {
         const message = 'Theme has been updated';
         const reloadAction = 'Reload theme';
 
@@ -31,10 +37,8 @@ export function activate() {
   });
 }
 
-function updateTheme(func?: () => void) {
-  const options = getThemeOptions();
-  const theme = createTheme(options);
-  writeThemeToFile(theme, func);
+function updateTheme(options: ThemeOptions, func?: () => void) {
+  writeThemeToFile(createTheme(options), func);
 }
 
 function reloadWindow() {

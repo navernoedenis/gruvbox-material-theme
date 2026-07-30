@@ -1,5 +1,4 @@
-import { workspace } from 'vscode';
-import { defaultThemeOptions, extensionName } from '../../constants/main';
+import { defaultThemeOptions } from '../../constants';
 import {
   type CursorColor,
   type SelectionColor,
@@ -9,9 +8,11 @@ import {
   type ThemePalette,
 } from '../../types';
 
-export function getThemeOptions(): ThemeOptions {
-  const config = workspace.getConfiguration(extensionName);
+type WorkspaceConfig = {
+  get: <T>(key: string) => T | undefined;
+};
 
+export function getThemeOptions(config: WorkspaceConfig): ThemeOptions {
   const contrast = config.get<ThemeContrast>('contrast');
   const cursor = config.get<CursorColor>('cursor');
   const palette = config.get<ThemePalette>('palette');
@@ -25,14 +26,4 @@ export function getThemeOptions(): ThemeOptions {
     selection: selection ?? defaultThemeOptions.selection,
     separators: separators ?? defaultThemeOptions.separators,
   };
-}
-
-export function checkIsDefaultThemeOptions(options: ThemeOptions) {
-  return (
-    options.contrast === defaultThemeOptions.contrast &&
-    options.cursor === defaultThemeOptions.cursor &&
-    options.palette === defaultThemeOptions.palette &&
-    options.selection === defaultThemeOptions.selection &&
-    options.separators === defaultThemeOptions.separators
-  );
 }
