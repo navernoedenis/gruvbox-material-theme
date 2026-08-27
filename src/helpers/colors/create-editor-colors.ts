@@ -1,25 +1,13 @@
 import { palettesRecord } from '../../constants';
-import {
-  type ContrastColors,
-  type CursorColor,
-  type PaletteColors,
-  type SelectionColors,
-} from '../../types';
+import { type ContrastColors, type PaletteColors } from '../../types';
 
-export function createColors({
+export function createEditorColors({
   contrastColors,
-  cursor,
   paletteColors,
-  selectionColors,
 }: {
   contrastColors: ContrastColors;
-  cursor: CursorColor;
   paletteColors: PaletteColors;
-  selectionColors: SelectionColors;
 }) {
-  const cursorTyped = cursor as keyof typeof paletteColors;
-  const cursorColor = paletteColors[cursorTyped] ?? paletteColors.fg;
-
   return {
     'activityBar.activeBorder': contrastColors.grey1,
     'activityBar.activeFocusBorder': contrastColors.grey1,
@@ -87,16 +75,12 @@ export function createColors({
     'editor.background': contrastColors.bg,
     'editor.findMatchBackground': `${paletteColors.orangeDim}40`,
     'editor.findMatchHighlightBackground': `${paletteColors.greenDim}40`,
-    'editor.findRangeHighlightBackground': selectionColors.bg3,
     'editor.foldBackground': `${contrastColors.bg5}80`,
     'editor.foreground': paletteColors.fg,
     'editor.hoverHighlightBackground': `${contrastColors.bg6}b0`,
-    'editor.inactiveSelectionBackground': selectionColors.bg3,
     'editor.lineHighlightBackground': `${contrastColors.bg3}90`,
     'editor.lineHighlightBorder': `${contrastColors.bg5}00`,
     'editor.rangeHighlightBackground': `${contrastColors.bg3}80`,
-    'editor.selectionBackground': selectionColors.bg2,
-    'editor.selectionHighlightBackground': selectionColors.bg3,
     'editor.snippetFinalTabstopHighlightBackground': `${paletteColors.greenDim}40`,
     'editor.snippetFinalTabstopHighlightBorder': contrastColors.bg,
     'editor.snippetTabstopHighlightBackground': `${contrastColors.bg5}a0`,
@@ -113,12 +97,12 @@ export function createColors({
     'editorBracketMatch.background': `${contrastColors.grey0}80`,
     'editorBracketMatch.border': `${contrastColors.bg}00`,
     'editorCodeLens.foreground': contrastColors.bg9,
-    'editorCursor.foreground': cursorColor,
     'editorError.background': `${paletteColors.redDim}00`,
     'editorError.foreground': paletteColors.redDim,
     'editorGhostText.background': `${contrastColors.bg}00`,
     'editorGhostText.foreground': contrastColors.bg9,
     'editorGroup.dropBackground': `${contrastColors.bg5}60`,
+    'editorGroupHeader.border': contrastColors.bg,
     'editorGroupHeader.noTabsBackground': contrastColors.bg,
     'editorGroupHeader.tabsBackground': contrastColors.bg,
     'editorGutter.addedBackground': `${paletteColors.greenDim}a0`,
@@ -186,6 +170,7 @@ export function createColors({
     'extensionIcon.preReleaseForeground': paletteColors.orange,
     'extensionIcon.starForeground': paletteColors.aqua,
     'extensionIcon.verifiedForeground': paletteColors.green,
+    'focusBorder': `${contrastColors.bg5}00`,
     'foreground': contrastColors.grey2,
     'gitDecoration.addedResourceForeground': `${palettesRecord.material.green}a0`,
     'gitDecoration.conflictingResourceForeground': `${palettesRecord.material.purple}a0`,
@@ -201,8 +186,7 @@ export function createColors({
     'gitlens.decorations.branchAheadForegroundColor': paletteColors.aqua,
     'gitlens.decorations.branchBehindForegroundColor': paletteColors.orange,
     'gitlens.decorations.branchDivergedForegroundColor': paletteColors.yellow,
-    'gitlens.decorations.branchMissingUpstreamForegroundColor':
-      paletteColors.red,
+    'gitlens.decorations.branchMissingUpstreamForegroundColor': paletteColors.red,
     'gitlens.decorations.branchUnpublishedForegroundColor': paletteColors.blue,
     'gitlens.decorations.branchUpToDateForegroundColor': paletteColors.fg,
     'gitlens.decorations.copiedForegroundColor': paletteColors.purple,
@@ -224,7 +208,7 @@ export function createColors({
     'gitlens.unpushlishedChangesIconColor': paletteColors.blue,
     'icon.foreground': paletteColors.aqua,
     'imagePreview.border': contrastColors.bg,
-    'input.background': `${contrastColors.bg}00`,
+    'input.background': contrastColors.bg,
     'input.border': contrastColors.bg5,
     'input.foreground': paletteColors.fg,
     'input.placeholderForeground': contrastColors.grey0,
@@ -336,7 +320,6 @@ export function createColors({
     'scrollbarSlider.activeBackground': contrastColors.grey2,
     'scrollbarSlider.background': `${contrastColors.bg9}80`,
     'scrollbarSlider.hoverBackground': contrastColors.bg9,
-    'selection.background': selectionColors.bg1,
     'settings.checkboxBackground': contrastColors.bg,
     'settings.checkboxBorder': contrastColors.bg7,
     'settings.checkboxForeground': paletteColors.orange,
@@ -410,6 +393,7 @@ export function createColors({
     'symbolIcon.unitForeground': paletteColors.fg,
     'symbolIcon.variableForeground': paletteColors.blue,
     'tab.activeBackground': contrastColors.bg,
+    'tab.activeBorder': contrastColors.bg9,
     'tab.activeForeground': paletteColors.fg,
     'tab.hoverBackground': contrastColors.bg,
     'tab.hoverForeground': paletteColors.fg,
@@ -437,7 +421,6 @@ export function createColors({
     'terminal.ansiWhite': paletteColors.fg,
     'terminal.ansiYellow': paletteColors.yellow,
     'terminal.foreground': paletteColors.fg,
-    'terminalCursor.foreground': cursorColor,
     'testing.iconErrored': paletteColors.red,
     'testing.iconFailed': paletteColors.red,
     'testing.iconPassed': paletteColors.aqua,

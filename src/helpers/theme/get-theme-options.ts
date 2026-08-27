@@ -1,11 +1,11 @@
 import { defaultThemeOptions } from '../../constants';
 import {
+  type ContrastKey,
   type CursorColor,
+  type PaletteKey,
   type SelectionColor,
   type Separators,
-  type ThemeContrast,
   type ThemeOptions,
-  type ThemePalette,
 } from '../../types';
 
 type WorkspaceConfig = {
@@ -13,17 +13,17 @@ type WorkspaceConfig = {
 };
 
 export function getThemeOptions(config: WorkspaceConfig): ThemeOptions {
-  const contrast = config.get<ThemeContrast>('contrast');
-  const cursor = config.get<CursorColor>('cursor');
-  const palette = config.get<ThemePalette>('palette');
-  const selection = config.get<SelectionColor>('selection');
+  const contrastKey = config.get<ContrastKey>('contrast');
+  const cursorColor = config.get<CursorColor>('cursor');
+  const paletteKey = config.get<PaletteKey>('palette');
+  const selectionColor = config.get<SelectionColor>('selection');
   const separators = config.get<Separators>('separators');
 
   return {
-    contrast: contrast ?? defaultThemeOptions.contrast,
-    cursor: cursor ?? defaultThemeOptions.cursor,
-    palette: palette ?? defaultThemeOptions.palette,
-    selection: selection ?? defaultThemeOptions.selection,
+    contrastKey: contrastKey ?? defaultThemeOptions.contrastKey,
+    cursorColor: cursorColor ?? defaultThemeOptions.cursorColor,
+    paletteKey: paletteKey ?? defaultThemeOptions.paletteKey,
+    selectionColor: selectionColor ?? defaultThemeOptions.selectionColor,
     separators: separators ?? defaultThemeOptions.separators,
   };
 }

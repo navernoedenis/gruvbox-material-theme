@@ -1,7 +1,8 @@
 import { contrastsRecord, palettesRecord } from '../../constants';
 import { tokenColorsAdapter } from '../adapters';
 import {
-  createColors,
+  createCursorColor,
+  createEditorColors,
   createSelectionColors,
   createSemanticColors,
   createSeparatorsColor,
@@ -10,42 +11,26 @@ import {
 
 import { type Theme, type ThemeOptions } from '../../types';
 
-export function createTheme({
-  contrast,
-  cursor,
-  palette,
-  selection,
-  separators,
-}: ThemeOptions): Theme {
-  const contrastColors = contrastsRecord[contrast];
-  const paletteColors = palettesRecord[palette];
+export function createTheme(options: ThemeOptions): Theme {
+  const contrastColors = contrastsRecord[options.contrastKey];
+  const paletteColors = palettesRecord[options.paletteKey];
 
-  const selectionColors = createSelectionColors({
-    contrastColors,
-    paletteColors,
-    selection,
-  });
+  const payload = { contrastColors, paletteColors, ...options };
 
-  const colors = createColors({
-    contrastColors,
-    cursor,
-    paletteColors,
-    selectionColors,
-  });
-
-  const separatorColors = createSeparatorsColor({
-    contrastColors,
-    separators,
-  });
-
-  const tokenColorsRaw = createTokenColors({
-    contrastColors,
-    paletteColors,
-  });
+  const cursorColor = createCursorColor(payload);
+  const editorColors = createEditorColors(payload);
+  const selectionColors = createSelectionColors(payload);
+  const separatorsColor = createSeparatorsColor(payload);
+  const tokenColorsRaw = createTokenColors(payload);
 
   return {
-    palette,
-    colors: { ...colors, ...separatorColors },
+    palette: paletteColors,
+    colors: {
+      ...cursorColor,
+      ...editorColors,
+      ...selectionColors,
+      ...separatorsColor,
+    },
     tokenColors: tokenColorsAdapter(tokenColorsRaw),
     semanticHighlighting: true,
     semanticTokenColors: createSemanticColors(paletteColors),

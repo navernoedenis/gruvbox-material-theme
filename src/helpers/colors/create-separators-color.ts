@@ -13,12 +13,9 @@ export function createSeparatorsColor({
     'activityBar.border': color,
     'contrastBorder': color,
     'editorGroup.border': color,
-    'editorGroupHeader.border': contrastColors.bg,
-    'focusBorder': color,
     'panel.border': color,
     'sideBar.border': color,
     'statusBar.border': color,
-    'tab.activeBorder': contrastColors.bg9,
     'tab.border': color,
     'titleBar.border': color,
   };

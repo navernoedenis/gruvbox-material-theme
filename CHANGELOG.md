@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+- Fixed transparent input borders when the separators option is disabled
+- Updated `enum` and `namespace` colors for typescript, tsx, and rust
+- Improved codebase
+
 ## 1.2.0
 
 - Added `slate` contrast and `pastel` palette

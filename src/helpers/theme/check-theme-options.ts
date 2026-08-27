@@ -3,10 +3,10 @@ import { type ThemeOptions } from '../../types';
 
 export function checkIsDefaultThemeOptions(options: ThemeOptions) {
   return (
-    options.contrast === defaultThemeOptions.contrast &&
-    options.cursor === defaultThemeOptions.cursor &&
-    options.palette === defaultThemeOptions.palette &&
-    options.selection === defaultThemeOptions.selection &&
+    options.contrastKey === defaultThemeOptions.contrastKey &&
+    options.cursorColor === defaultThemeOptions.cursorColor &&
+    options.paletteKey === defaultThemeOptions.paletteKey &&
+    options.selectionColor === defaultThemeOptions.selectionColor &&
     options.separators === defaultThemeOptions.separators
   );
 }

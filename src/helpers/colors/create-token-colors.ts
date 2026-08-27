@@ -799,7 +799,7 @@ export function createTokenColors({
     },
     {
       name: 'Haskell aqua',
-      scope: ['entity.name.namespace', 'meta.preprocessor.haskell'],
+      scope: ['entity.name.namespace.haskell', 'meta.preprocessor.haskell'],
       settings: {
         foreground: paletteColors.aqua,
       },
@@ -1595,7 +1595,6 @@ export function createTokenColors({
         'punctuation.decorator',
         'punctuation.definition.directive',
         'punctuation.definition.preprocessor',
-        'storage.type.namespace',
       ],
       settings: {
         foreground: paletteColors.aqua,
@@ -1923,13 +1922,6 @@ export function createTokenColors({
       },
     },
     {
-      name: 'Rust orange',
-      scope: 'storage.type.rust',
-      settings: {
-        foreground: paletteColors.orange,
-      },
-    },
-    {
       name: 'Rust purple',
       scope: [
         'meta.attribute.rust',
@@ -1941,10 +1933,24 @@ export function createTokenColors({
       },
     },
     {
+      name: 'Rust red',
+      scope: 'storage.type.rust',
+      settings: {
+        foreground: paletteColors.red,
+      },
+    },
+    {
       name: 'Rust white',
       scope: 'entity.name.type.mod.rust',
       settings: {
         foreground: paletteColors.fg,
+      },
+    },
+    {
+      name: 'Rust yellow',
+      scope: 'entity.name.type.enum.rust',
+      settings: {
+        foreground: paletteColors.yellow,
       },
     },
     {
@@ -2273,20 +2279,12 @@ export function createTokenColors({
       scope: [
         'entity.name.type.alias.tsx',
         'entity.name.type.class.tsx',
-        'entity.name.type.enum.tsx',
         'entity.name.type.interface.tsx',
         'entity.name.type.tsx',
         'entity.other.inherited-class.tsx',
       ],
       settings: {
         foreground: paletteColors.aqua,
-      },
-    },
-    {
-      name: 'TSX blue',
-      scope: 'entity.name.type.module.tsx',
-      settings: {
-        foreground: paletteColors.blue,
       },
     },
     {
@@ -2317,6 +2315,7 @@ export function createTokenColors({
       name: 'TSX orange',
       scope: [
         'storage.type.function.arrow.tsx',
+        'storage.type.namespace.tsx',
         'storage.type.tsx',
         'storage.type.type.tsx',
         'support.class.component.tsx',
@@ -2331,17 +2330,16 @@ export function createTokenColors({
         'keyword.control.export.tsx',
         'keyword.control.from.tsx',
         'keyword.control.import.tsx',
-        'storage.type.namespace.tsx',
       ],
       settings: {
         foreground: paletteColors.purple,
       },
     },
     {
-      name: 'TSX white',
-      scope: 'entity.name.type.module.tsx',
+      name: 'TSX yellow',
+      scope: 'entity.name.type.enum.tsx',
       settings: {
-        foreground: paletteColors.fg,
+        foreground: paletteColors.yellow,
       },
     },
     {
@@ -2361,20 +2359,12 @@ export function createTokenColors({
       scope: [
         'entity.name.type.alias.ts',
         'entity.name.type.class.ts',
-        'entity.name.type.enum.ts',
         'entity.name.type.interface.ts',
         'entity.name.type.ts',
         'entity.other.inherited-class.ts',
       ],
       settings: {
         foreground: paletteColors.aqua,
-      },
-    },
-    {
-      name: 'TypeScript blue',
-      scope: 'entity.name.type.module.ts',
-      settings: {
-        foreground: paletteColors.blue,
       },
     },
     {
@@ -2400,6 +2390,7 @@ export function createTokenColors({
       name: 'TypeScript orange',
       scope: [
         'storage.type.function.arrow.ts',
+        'storage.type.namespace.ts',
         'storage.type.ts',
         'storage.type.type.ts',
       ],
@@ -2413,17 +2404,16 @@ export function createTokenColors({
         'keyword.control.export.ts',
         'keyword.control.from.ts',
         'keyword.control.import.ts',
-        'storage.type.namespace.ts',
       ],
       settings: {
         foreground: paletteColors.purple,
       },
     },
     {
-      name: 'TypeScript white',
-      scope: 'entity.name.type.module.ts',
+      name: 'TypeScript yellow',
+      scope: 'entity.name.type.enum.ts',
       settings: {
-        foreground: paletteColors.fg,
+        foreground: paletteColors.yellow,
       },
     },
     {

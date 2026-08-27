@@ -1,18 +1,18 @@
 import {
   type ContrastColors,
+  type ContrastKey,
   type PaletteColors,
-  type ThemeContrast,
+  type PaletteKey,
   type ThemeOptions,
-  type ThemePalette,
 } from './types';
 
 export const extensionName = 'gruvbox-material-theme';
 
 export const defaultThemeOptions: ThemeOptions = {
-  contrast: 'medium',
-  cursor: 'white',
-  palette: 'material',
-  selection: 'grey',
+  contrastKey: 'medium',
+  cursorColor: 'white',
+  paletteKey: 'material',
+  selectionColor: 'grey',
   separators: true,
 };
 
@@ -22,7 +22,7 @@ const commonContrastColors = {
   grey2: '#a89984',
 };
 
-export const contrastsRecord: Record<ThemeContrast, ContrastColors> = {
+export const contrastsRecord: Record<ContrastKey, ContrastColors> = {
   soft: {
     ...commonContrastColors,
     bg: '#32302f',
@@ -81,7 +81,7 @@ export const contrastsRecord: Record<ThemeContrast, ContrastColors> = {
   },
 };
 
-export const palettesRecord: Record<ThemePalette, PaletteColors> = {
+export const palettesRecord: Record<PaletteKey, PaletteColors> = {
   classic: {
     fg: '#ebdbb2',
     fg0: '#ebdbb2',

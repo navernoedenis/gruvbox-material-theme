@@ -1,7 +1,3 @@
-export type ThemeContrast = 'soft' | 'medium' | 'hard' | 'slate';
-
-export type ThemePalette = 'classic' | 'material' | 'pastel';
-
 type BaseColor =
   | 'aqua'
   | 'blue'
@@ -14,25 +10,27 @@ type BaseColor =
 export type CursorColor = BaseColor | 'white';
 export type PaletteColor = BaseColor | `${BaseColor}Dim`;
 export type SelectionColor = BaseColor | 'grey';
+
+export type ContrastKey = 'soft' | 'medium' | 'hard' | 'slate';
+export type PaletteKey = 'classic' | 'material' | 'pastel';
+
 export type Separators = boolean;
 
 export interface TokenColor {
   name: string;
   scope: string;
-  settings: TokenColorSettings;
+  settings: {
+    foreground?: string;
+    fontStyle?: string;
+  };
 }
-
-export type TokenColorSettings = {
-  foreground?: string;
-  fontStyle?: string;
-};
 
 export interface TokenColorRaw extends Omit<TokenColor, 'scope'> {
   scope: string | string[];
 }
 
 export interface Theme {
-  palette: ThemePalette;
+  palette: PaletteColors;
   colors: Record<string, string>;
   tokenColors: TokenColor[];
   semanticHighlighting: boolean;
@@ -40,11 +38,11 @@ export interface Theme {
 }
 
 export interface ThemeOptions {
-  contrast: ThemeContrast;
-  cursor: CursorColor;
-  palette: ThemePalette;
-  selection: SelectionColor;
-  separators: boolean;
+  contrastKey: ContrastKey;
+  cursorColor: CursorColor;
+  paletteKey: PaletteKey;
+  selectionColor: SelectionColor;
+  separators: Separators;
 }
 
 export interface PaletteColors extends Record<PaletteColor, string> {
