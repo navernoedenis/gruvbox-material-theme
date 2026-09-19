@@ -16,12 +16,11 @@
     "exactOptionalPropertyTypes": true,
 
     "strict": true,
-
     "removeComments": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "exclude": ["./src/scripts/*"]
+  "exclude": ["src/scripts/*"]
 }

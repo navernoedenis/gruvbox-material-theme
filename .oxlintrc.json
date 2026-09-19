@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "eslint/prefer-const": ["error", { "destructuring": "any" }],
+    "no-alert": "error",
+    "no-plusplus": "off",
+    "oxc/approx-constant": "warn"
+  }
+}

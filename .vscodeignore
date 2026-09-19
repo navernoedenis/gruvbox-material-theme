@@ -4,6 +4,7 @@
 
 *.vsix
 **/*.ts
+.ox*.json
 
 images
 node_modules

@@ -1,15 +1,18 @@
 # Changelog
 
+## 1.3.0
+
+- Feat: Added bright sidebar text
+- Fix: Token colors naming
+
 ## 1.2.1
 
-- Fixed transparent input borders when the separators option is disabled
-- Updated `enum` and `namespace` colors for typescript, tsx, and rust
-- Improved codebase
+- Fix: Transparent input borders when the separators option is disabled
+- Updated `enum` and `namespace` colors for typescript, tsx and rust
 
 ## 1.2.0
 
-- Added `slate` contrast and `pastel` palette
-- Improved codebase
+- Feat: Added `slate` contrast and `pastel` palette
 
 ## 1.1.2
 
@@ -17,17 +20,17 @@
 
 ## 1.1.1
 
-- Fixed inconsistent default value for separators
+- Fix: Inconsistent default value for separators
 
 ## 1.1.0
 
-- Added border separators
+- Feat: Added border separators
 - Updated the logo
 
 ## 1.0.4
 
-- Fixed inconsistent colors for `import`, `export` and `from` in .js, .ts, .jsx and .tsx files
-- Fixed component colors in .tsx and .jsx files
+- Fix: Inconsistent colors for `import`, `export` and `from` in .js, .ts, .jsx and .tsx files
+- Fix: Component colors in .tsx and .jsx files
 
 ## 1.0.3
 
@@ -36,8 +39,8 @@
 
 ## 1.0.2
 
-- Fixed an issue with the applied color on python `self`
-- Fixed inconsistent naming text colors between arrow components and function components in react
+- Fix: An issue with the applied color on python `self`
+- Fix: Inconsistent naming text colors between arrow components and function components in react
 
 ## 1.0.1
 
@@ -48,5 +51,5 @@
 ## 1.0.0
 
 - Initial release
-- Added two palettes `material` and `classic`
-- Added customizable `contrast`, `cursor` and `selection colors`
+- Feat: Added two palettes `material` and `classic`
+- Feat: Added customizable `contrast`, `cursor` and `selection colors`

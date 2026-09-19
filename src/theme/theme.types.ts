@@ -1,32 +1,29 @@
 type BaseColor =
-  | 'aqua'
-  | 'blue'
-  | 'green'
-  | 'orange'
-  | 'purple'
-  | 'red'
-  | 'yellow';
+  | "aqua"
+  | "blue"
+  | "green"
+  | "orange"
+  | "purple"
+  | "red"
+  | "yellow";
 
-export type CursorColor = BaseColor | 'white';
+export type CursorColor = BaseColor | "white";
 export type PaletteColor = BaseColor | `${BaseColor}Dim`;
-export type SelectionColor = BaseColor | 'grey';
+export type SelectionColor = BaseColor | "grey";
 
-export type ContrastKey = 'soft' | 'medium' | 'hard' | 'slate';
-export type PaletteKey = 'classic' | 'material' | 'pastel';
+export type ContrastKey = "soft" | "medium" | "hard" | "slate";
+export type PaletteKey = "classic" | "material" | "pastel";
 
+export type SidebarBrightText = boolean;
 export type Separators = boolean;
 
 export interface TokenColor {
   name: string;
-  scope: string;
+  scope: string | string[];
   settings: {
     foreground?: string;
     fontStyle?: string;
   };
-}
-
-export interface TokenColorRaw extends Omit<TokenColor, 'scope'> {
-  scope: string | string[];
 }
 
 export interface Theme {
@@ -43,12 +40,7 @@ export interface ThemeOptions {
   paletteKey: PaletteKey;
   selectionColor: SelectionColor;
   separators: Separators;
-}
-
-export interface PaletteColors extends Record<PaletteColor, string> {
-  fg: string;
-  fg0: string;
-  fg1: string;
+  sidebarBrightText: SidebarBrightText;
 }
 
 export interface ContrastColors {
@@ -68,8 +60,19 @@ export interface ContrastColors {
   grey2: string;
 }
 
+export interface PaletteColors extends Record<PaletteColor, string> {
+  fg: string;
+  fg0: string;
+  fg1: string;
+}
+
 export interface SelectionColors {
   bg1: string;
   bg2: string;
   bg3: string;
 }
+
+export type ColorsPayload = {
+  contrast: ContrastColors;
+  palette: PaletteColors;
+};

@@ -1,10 +1,9 @@
-import { type ThemeOptions } from '../types';
-import { createTheme } from '../helpers/theme';
-import { writeThemeToFile } from '../helpers/write-theme-to-file';
-import { defaultThemeOptions } from '../constants';
+import { createTheme, defaultThemeOptions, type ThemeOptions } from "../theme";
+import { EXTENSION_NAME } from "../constants";
+import { writeToFile } from "../utils/write-to-file";
 
-function buildTheme(options: ThemeOptions) {
-  writeThemeToFile(createTheme(options));
+function buildTheme(filename: string, options: ThemeOptions) {
+  writeToFile(filename, createTheme(options));
 }
 
-buildTheme(defaultThemeOptions);
+buildTheme(EXTENSION_NAME, defaultThemeOptions);
