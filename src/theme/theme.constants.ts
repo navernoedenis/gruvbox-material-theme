@@ -3,19 +3,24 @@ import {
   type ContrastKey,
   type PaletteColors,
   type PaletteKey,
-  type ThemeOptions,
+  type BaseThemeOptions,
 } from "./theme.types";
 
-export const defaultThemeOptions: ThemeOptions = {
-  contrastKey: "medium",
-  cursorColor: "white",
-  paletteKey: "material",
-  selectionColor: "grey",
-  separators: true,
-  sidebarBrightText: false,
+export const BASE_THEME_OPTIONS: BaseThemeOptions = {
+  editor: {
+    contrastKey: "medium",
+    cursorColor: "white",
+    paletteKey: "material",
+    selectionColor: "grey",
+    separators: false,
+    sidebarBrightText: false,
+  },
+  tokens: {
+    envColor: "orange",
+  },
 };
 
-const commonContrastColors = {
+const COMMON_CONTRAST_COLORS = {
   grey0: "#7c6f64",
   grey1: "#928374",
   grey2: "#a89984",
@@ -23,7 +28,7 @@ const commonContrastColors = {
 
 export const CONTRASTS: Record<ContrastKey, ContrastColors> = {
   soft: {
-    ...commonContrastColors,
+    ...COMMON_CONTRAST_COLORS,
     bg: "#32302f",
     bg0: "#181919",
     bg1: "#242424",
@@ -37,7 +42,7 @@ export const CONTRASTS: Record<ContrastKey, ContrastColors> = {
     bg9: "#928374",
   },
   medium: {
-    ...commonContrastColors,
+    ...COMMON_CONTRAST_COLORS,
     bg: "#292828",
     bg0: "#101010",
     bg1: "#1c1c1c",
@@ -51,7 +56,7 @@ export const CONTRASTS: Record<ContrastKey, ContrastColors> = {
     bg9: "#7c6f64",
   },
   hard: {
-    ...commonContrastColors,
+    ...COMMON_CONTRAST_COLORS,
     bg: "#202020",
     bg0: "#070808",
     bg1: "#131414",
@@ -65,7 +70,7 @@ export const CONTRASTS: Record<ContrastKey, ContrastColors> = {
     bg9: "#665c54",
   },
   slate: {
-    ...commonContrastColors,
+    ...COMMON_CONTRAST_COLORS,
     bg: "#1b2224",
     bg0: "#090c0d",
     bg1: "#111517",

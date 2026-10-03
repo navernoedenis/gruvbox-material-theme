@@ -1,15 +1,13 @@
-import { type SidebarBrightText, type ColorsPayload } from "../theme.types";
+import { type ThemeOptions } from "../theme.types";
 
-type SidebarTextColorsProps = ColorsPayload & {
-  sidebarBrightText: SidebarBrightText;
-};
+export function createSidebarTextColor(options: ThemeOptions) {
+  const { colors, editor } = options;
 
-export function createSidebarTextColor({
-  contrast,
-  palette,
-  sidebarBrightText,
-}: SidebarTextColorsProps) {
+  const sidebarTextColor = editor.sidebarBrightText
+    ? colors.palette.fg1
+    : colors.contrast.grey1;
+
   return {
-    "sideBar.foreground": sidebarBrightText ? palette.fg1 : contrast.grey1,
+    "sideBar.foreground": sidebarTextColor,
   };
 }

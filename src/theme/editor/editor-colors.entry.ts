@@ -1,29 +1,18 @@
-import {
-  type ColorsPayload,
-  type CursorColor,
-  type SelectionColor,
-  type Separators,
-  type SidebarBrightText,
-} from "../theme.types";
+import { type ThemeOptions } from "../theme.types";
 
 import { createCursorColor } from "./editor-colors.cursor";
 import { createSelectionColors } from "./editor-colors.selection";
 import { createSeparatorsColor } from "./editor-colors.separators";
 import { createSidebarTextColor } from "./editor-colors.sidebar-text";
 
-type EditorColorsProps = ColorsPayload & {
-  cursorColor: CursorColor;
-  selectionColor: SelectionColor;
-  separators: Separators;
-  sidebarBrightText: SidebarBrightText;
-};
+export function createEditorColors(options: ThemeOptions) {
+  const { colors } = options;
 
-export function createEditorColors(colors: EditorColorsProps) {
   return {
-    ...createCursorColor(colors),
-    ...createSelectionColors(colors),
-    ...createSeparatorsColor(colors),
-    ...createSidebarTextColor(colors),
+    ...createCursorColor(options),
+    ...createSelectionColors(options),
+    ...createSeparatorsColor(options),
+    ...createSidebarTextColor(options),
 
     "activityBar.activeBorder": colors.contrast.grey1,
     "activityBar.activeFocusBorder": colors.contrast.grey1,

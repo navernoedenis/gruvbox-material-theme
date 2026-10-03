@@ -7,15 +7,15 @@ type BaseColor =
   | "red"
   | "yellow";
 
+export type ContrastKey = "soft" | "medium" | "hard" | "slate";
 export type CursorColor = BaseColor | "white";
 export type PaletteColor = BaseColor | `${BaseColor}Dim`;
-export type SelectionColor = BaseColor | "grey";
-
-export type ContrastKey = "soft" | "medium" | "hard" | "slate";
 export type PaletteKey = "classic" | "material" | "pastel";
-
-export type SidebarBrightText = boolean;
+export type SelectionColor = BaseColor | "grey";
 export type Separators = boolean;
+export type SidebarBrightText = boolean;
+
+export type EnvColor = Extract<BaseColor, "blue" | "orange" | "red" | "yellow">;
 
 export interface TokenColor {
   name: string;
@@ -34,13 +34,25 @@ export interface Theme {
   semanticTokenColors: Record<string, string>;
 }
 
-export interface ThemeOptions {
-  contrastKey: ContrastKey;
-  cursorColor: CursorColor;
-  paletteKey: PaletteKey;
-  selectionColor: SelectionColor;
-  separators: Separators;
-  sidebarBrightText: SidebarBrightText;
+export interface BaseThemeOptions {
+  editor: {
+    contrastKey: ContrastKey;
+    cursorColor: CursorColor;
+    paletteKey: PaletteKey;
+    selectionColor: SelectionColor;
+    separators: Separators;
+    sidebarBrightText: SidebarBrightText;
+  };
+  tokens: {
+    envColor: EnvColor;
+  };
+}
+
+export interface ThemeOptions extends BaseThemeOptions {
+  colors: {
+    contrast: ContrastColors;
+    palette: PaletteColors;
+  };
 }
 
 export interface ContrastColors {
@@ -71,8 +83,3 @@ export interface SelectionColors {
   bg2: string;
   bg3: string;
 }
-
-export type ColorsPayload = {
-  contrast: ContrastColors;
-  palette: PaletteColors;
-};

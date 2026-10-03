@@ -1,7 +1,12 @@
-import { type ColorsPayload, type TokenColor } from "../theme.types";
+import { type ThemeOptions, type TokenColor } from "../theme.types";
+import { createEnvColor } from "./token-colors.env";
 
-export function createTokenColors(colors: ColorsPayload): TokenColor[] {
+export function createTokenColors(options: ThemeOptions): TokenColor[] {
+  const { colors } = options;
+
   return [
+    ...createEnvColor(options),
+
     {
       name: "Annotation",
       scope: "storage.type.annotation",

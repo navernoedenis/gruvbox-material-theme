@@ -2,20 +2,22 @@ import { commands, window, workspace } from "vscode";
 import { createBackup, checkIsBackupExists } from "./utils/create-backup";
 import { writeToFile } from "./utils/write-to-file";
 
-import { EXTENSION_NAME } from "./constants";
-import {
-  checkIsDefaultThemeOptions,
-  createTheme,
-  getThemeOptions,
-  type ThemeOptions,
-} from "./theme";
+import { BASE_THEME_OPTIONS, getBaseThemeOptions } from "./theme";
+import { createTheme, checkIsDefaultThemeOptions } from "./theme";
+import { type BaseThemeOptions } from "./theme";
+
+import { EXTENSION_NAME } from "./app.constants";
 
 export function activate() {
   const config = workspace.getConfiguration(EXTENSION_NAME);
-  const options = getThemeOptions(config);
+  const options = getBaseThemeOptions(config, BASE_THEME_OPTIONS);
   const isBackupExists = checkIsBackupExists();
+  const isDefaultThemeOptions = checkIsDefaultThemeOptions(
+    options,
+    BASE_THEME_OPTIONS,
+  );
 
-  if (!isBackupExists && !checkIsDefaultThemeOptions(options)) {
+  if (!isBackupExists && !isDefaultThemeOptions) {
     updateTheme(EXTENSION_NAME, options);
     createBackup();
     reloadEditor();
@@ -24,11 +26,14 @@ export function activate() {
   workspace.onDidChangeConfiguration((event) => {
     if (event.affectsConfiguration(EXTENSION_NAME)) {
       const updatedConfig = workspace.getConfiguration(EXTENSION_NAME);
-      const updatedOptions = getThemeOptions(updatedConfig);
+      const updatedOptions = getBaseThemeOptions(
+        updatedConfig,
+        BASE_THEME_OPTIONS,
+      );
 
       updateTheme(EXTENSION_NAME, updatedOptions);
       const message = "Theme has been updated!";
-      const action = "Reload editor";
+      const action = "Reload Editor";
 
       window
         .showInformationMessage(message, action)
@@ -37,7 +42,7 @@ export function activate() {
   });
 }
 
-function updateTheme(filename: string, options: ThemeOptions) {
+function updateTheme(filename: string, options: BaseThemeOptions) {
   writeToFile(filename, createTheme(options));
 }
 

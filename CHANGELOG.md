@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0
+
+- Feat: Add 4 color options for `.env` variables
+- Updated settings keys. Existing settings will be reset
+- Separators are disabled by default
+
 ## 1.3.0
 
 - Feat: Added bright sidebar text

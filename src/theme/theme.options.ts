@@ -1,43 +1,59 @@
-import { defaultThemeOptions as DEFAULT } from "./theme.constants";
 import {
-  type SidebarBrightText as SBT,
+  type BaseThemeOptions,
   type ContrastKey,
   type CursorColor,
+  type EnvColor,
   type PaletteKey,
   type SelectionColor,
   type Separators,
-  type ThemeOptions,
+  type SidebarBrightText as SBT,
 } from "./theme.types";
 
 type WorkspaceConfig = {
   get: <T>(key: string) => T | undefined;
 };
 
-export function getThemeOptions(config: WorkspaceConfig): ThemeOptions {
-  const contrastKey = config.get<ContrastKey>("contrast");
-  const cursorColor = config.get<CursorColor>("cursor");
-  const paletteKey = config.get<PaletteKey>("palette");
-  const selectionColor = config.get<SelectionColor>("selection");
-  const separators = config.get<Separators>("separators");
-  const sidebarBrightText = config.get<SBT>("sidebar.bright-text");
+export function getBaseThemeOptions(
+  config: WorkspaceConfig,
+  DEFAULT: BaseThemeOptions,
+): BaseThemeOptions {
+  const contrastKey = config.get<ContrastKey>("editor.contrast");
+  const cursorColor = config.get<CursorColor>("editor.cursor");
+  const paletteKey = config.get<PaletteKey>("editor.palette");
+  const selectionColor = config.get<SelectionColor>("editor.selection");
+  const separators = config.get<Separators>("editor.separators");
+  const sidebarBrightText = config.get<SBT>("editor.sidebar-bright-text");
+
+  const envColor = config.get<EnvColor>("tokens.env-color");
 
   return {
-    contrastKey: contrastKey ?? DEFAULT.contrastKey,
-    cursorColor: cursorColor ?? DEFAULT.cursorColor,
-    paletteKey: paletteKey ?? DEFAULT.paletteKey,
-    selectionColor: selectionColor ?? DEFAULT.selectionColor,
-    separators: separators ?? DEFAULT.separators,
-    sidebarBrightText: sidebarBrightText ?? DEFAULT.sidebarBrightText,
+    editor: {
+      contrastKey: contrastKey ?? DEFAULT.editor.contrastKey,
+      cursorColor: cursorColor ?? DEFAULT.editor.cursorColor,
+      paletteKey: paletteKey ?? DEFAULT.editor.paletteKey,
+      selectionColor: selectionColor ?? DEFAULT.editor.selectionColor,
+      separators: separators ?? DEFAULT.editor.separators,
+      sidebarBrightText: sidebarBrightText ?? DEFAULT.editor.sidebarBrightText,
+    },
+    tokens: {
+      envColor: envColor ?? DEFAULT.tokens.envColor,
+    },
   };
 }
 
-export function checkIsDefaultThemeOptions(options: ThemeOptions) {
-  return (
-    options.contrastKey === DEFAULT.contrastKey &&
-    options.cursorColor === DEFAULT.cursorColor &&
-    options.paletteKey === DEFAULT.paletteKey &&
-    options.selectionColor === DEFAULT.selectionColor &&
-    options.separators === DEFAULT.separators &&
-    options.sidebarBrightText === DEFAULT.sidebarBrightText
-  );
+export function checkIsDefaultThemeOptions(
+  options: BaseThemeOptions,
+  DEFAULT: BaseThemeOptions,
+) {
+  const { editor, tokens } = options;
+
+  return [
+    editor.contrastKey === DEFAULT.editor.contrastKey,
+    editor.cursorColor === DEFAULT.editor.cursorColor,
+    editor.paletteKey === DEFAULT.editor.paletteKey,
+    editor.selectionColor === DEFAULT.editor.selectionColor,
+    editor.separators === DEFAULT.editor.separators,
+    editor.sidebarBrightText === DEFAULT.editor.sidebarBrightText,
+    tokens.envColor === DEFAULT.tokens.envColor,
+  ].every(Boolean);
 }

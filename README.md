@@ -11,9 +11,14 @@
 </h3>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.3.0-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/v1.4.0-%23000?style=for-the-badge&label=version&color=%23a9b665" alt="version"></a>&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/0%2F0(0)-%23000?style=for-the-badge&label=rating&color=%23e3ae5a" alt="rating"></a>&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/120+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a> 
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-icons"><img src="https://img.shields.io/badge/2.2K+-%23000?style=for-the-badge&label=installs&color=%23ebdbb2" alt="installs"></a> 
+</p>
+
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=navernoedenis.gruvbox-material-theme">Marketplace</a>&nbsp; ||
+  <a href="https://open-vsx.org/extension/navernoedenis/gruvbox-material-theme">Open VSX</a>
 </p>
 
 <h4 align="center">Contrast: Medium, Palette: Material</h4>
@@ -25,7 +30,7 @@
 <h4 align="center">Contrast: Slate, Palette: Pastel</h4>
 <div align="center"><img src="./images/slate-pastel.jpg" alt="slate, pastel"></div>
 
-<h3 align="center">Special Thanks</h3>
+<h3 align="center">Special thanks</h3>
 <div align="center">
   <p>
     A huge thanks to these projects for inspiring and shaping the color palette used in this theme

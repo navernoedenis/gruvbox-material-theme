@@ -3,18 +3,25 @@ import { createSemanticColors } from "./semantic/semantic-colors.entry";
 import { createTokenColors } from "./token/token-colors.entry";
 
 import { CONTRASTS, PALETTES } from "./theme.constants";
-import { type Theme, type ThemeOptions } from "./theme.types";
+import {
+  type Theme,
+  type BaseThemeOptions,
+  type ThemeOptions,
+} from "./theme.types";
 
-export function createTheme(options: ThemeOptions): Theme {
-  const contrast = CONTRASTS[options.contrastKey];
-  const palette = PALETTES[options.paletteKey];
-  const payload = { contrast, palette, ...options };
+export function createTheme(baseOptions: BaseThemeOptions): Theme {
+  const contrast = CONTRASTS[baseOptions.editor.contrastKey];
+  const palette = PALETTES[baseOptions.editor.paletteKey];
+
+  const options = Object.assign(baseOptions, {
+    colors: { contrast, palette },
+  }) satisfies ThemeOptions;
 
   return {
     palette,
-    colors: createEditorColors(payload),
-    tokenColors: createTokenColors(payload),
+    colors: createEditorColors(options),
+    tokenColors: createTokenColors(options),
     semanticHighlighting: true,
-    semanticTokenColors: createSemanticColors(palette),
+    semanticTokenColors: createSemanticColors(options),
   };
 }

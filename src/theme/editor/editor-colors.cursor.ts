@@ -1,15 +1,13 @@
-import { type ColorsPayload, type CursorColor } from "../theme.types";
+import { type ThemeOptions } from "../theme.types";
 
-type CursorColorProps = ColorsPayload & {
-  cursorColor: CursorColor;
-};
+export function createCursorColor(options: ThemeOptions) {
+  const { colors, editor } = options;
 
-export function createCursorColor({ cursorColor, palette }: CursorColorProps) {
-  const cursorTyped = cursorColor as keyof typeof palette;
-  const color = palette[cursorTyped] ?? palette.fg;
+  const cursorTyped = editor.cursorColor as keyof typeof colors.palette;
+  const cursorColor = colors.palette[cursorTyped] ?? colors.palette.fg;
 
   return {
-    "editorCursor.foreground": color,
-    "terminalCursor.foreground": color,
+    "editorCursor.foreground": cursorColor,
+    "terminalCursor.foreground": cursorColor,
   };
 }

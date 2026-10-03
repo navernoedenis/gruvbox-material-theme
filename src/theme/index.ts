@@ -1,5 +1,8 @@
 export { createTheme } from "./theme.entry";
-export { getThemeOptions, checkIsDefaultThemeOptions } from "./theme.options";
-export { defaultThemeOptions } from "./theme.constants";
+export { BASE_THEME_OPTIONS } from "./theme.constants";
+export {
+  checkIsDefaultThemeOptions,
+  getBaseThemeOptions,
+} from "./theme.options";
 
-export { type ThemeOptions } from "./theme.types";
+export { type BaseThemeOptions, type ThemeOptions } from "./theme.types";
